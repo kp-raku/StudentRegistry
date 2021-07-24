@@ -1,2 +1,2 @@
-# StudentRegisty
+# StudentRegistry
 Student Registry application
