@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -47,7 +48,7 @@ public class StudentController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Student> createStudent(@RequestBody Student student) {
+    public ResponseEntity<Student> createStudent(@Valid @RequestBody Student student) {
         Student newStudent = studentService.newStudent(student);
         return new ResponseEntity<Student>(newStudent, HttpStatus.CREATED);
 
